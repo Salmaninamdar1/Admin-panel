@@ -11,11 +11,16 @@ function App() {
   // function for adding new todo
   const addTodo = (data) => {
     if (data) {
+      
+
+      console.log(data,"Aaa")
       setTodoList((prev) => {
         return [
           ...prev,
           {
-            task: data,
+            task:data.text,
+            price: data.price,
+            quantity:data.quantity,
             id: Math.random().toString(),
             mark: false,
             timeStamp: new Date(),

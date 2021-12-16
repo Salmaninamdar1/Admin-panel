@@ -4,28 +4,48 @@ import Button from "../UI/Button";
 import Container from "../UI/Container";
 
 const AddTodo = (props) => {
-  const [text, setText] = useState("");
-  const [price, setPrice] = useState("");
-  const [quantity, setQuantity] = useState("");
+  // const [text, setText] = useState("");
+  // const [price, setPrice] = useState("");
+  // const [quantity, setQuantity] = useState("");
+  const [state, setState] = useState({
+    text: "",
+    price: "",
+    quantity:"",
+  })
+  function handleChange(evt) {
+    const value = evt.target.value;
+    setState({
+      ...state,
+      [evt.target.name]: value
+    });
+    console.log(value,"aaa")
+  }
 
-  const changeHandler = (e) => {
-    setText(e.target.value);
-  };
-  const changePrice = (e) => {
-    setPrice(e.target.value);
-  };
-  const changeQuantity = (e) => {
-    setQuantity(e.target.value);
-  };
+  // const changeHandler = (e) => {
+  //   setText(e.target.value);
+  // };
+  // const changePrice = (e) => {
+  //   setPrice(e.target.value);
+  // };
+  // const changeQuantity = (e) => {
+  //   setQuantity(e.target.value);
+  // };
 
   const submitHandler = (e) => {
+    // const array=[]
+
     e.preventDefault();
-    props.onAddTodo(text);
-    setText("");
-    props.onAddTodo(price);
-    setPrice("");
-    props.onAddTodo(quantity);
-    setQuantity("");
+    props.onAddTodo(state)
+    setState("");
+    // array.push(props.onAddTodo(text));
+    // console.log((props.onAddTodo(text),"a"));
+    // setText("");
+    // array.push(props.onAddTodo(price));
+    // setPrice("");
+    // array.push(props.onAddTodo(quantity));
+    // setQuantity("");
+    // console.log(array,"work")
+    // return array
   };
 
 
@@ -37,24 +57,24 @@ const AddTodo = (props) => {
           <label/>
           <input
             type="text"
-            name="addTodo"
+            name="text"
             placeholder="Enter Item Name"
-            value={text}
-            onChange={changeHandler}
+            value={state.text}
+            onChange={handleChange}
           />
           <input
             type="text"
-            name="addQuantity"
+            name="quantity"
             placeholder="Enter quantity"
-            value={quantity}
-            onChange={changeQuantity}
+            value={state.quantity}
+            onChange={handleChange}
           />
           <input
             type="text"
-            name="addprice"
+            name="price"
             placeholder="Enter price"
-            value={price}
-            onChange={changePrice}
+            value={state.price}
+            onChange={handleChange}
           />
           <Button type="submit">Add Items</Button>
         </form>

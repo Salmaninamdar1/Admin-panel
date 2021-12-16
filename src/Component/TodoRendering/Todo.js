@@ -5,6 +5,7 @@ import style from "./Todo.module.css";
 
 const Todo = (props) => {
   const markHandler = () => {
+    console.log(props.todoItem.id,"test")
     props.onMarkTodo(props.todoItem.id);
   };
   const deleteHandler = () => {
