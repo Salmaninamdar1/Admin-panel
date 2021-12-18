@@ -21,11 +21,11 @@ const TodoList = (props) => {
            (
             <Container key={todo.id}>
 
-              {/* <Todo
+              <Todo
                 todoItem={todo}
-                onMarkTodo={markTodo}
+                // onMarkTodo={markTodo}
                 onDeleteTodo={deleteTodo}
-              /> */}
+              />
                  <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">{todo.task}</h5>
