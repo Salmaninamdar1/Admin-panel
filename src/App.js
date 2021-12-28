@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; //here we use useEffect becouse of it redering on component again and again to over come from it we used useEffect
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddTodo from "./Component/TodoForm/AddTodo";
