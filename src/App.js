@@ -13,7 +13,7 @@ const initialState = {
   quantity: "",
   img: "",
 };
-
+// p a
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [id, setId] = useState(null);
@@ -86,7 +86,7 @@ function App() {
     };
     setTodoList([...filteredData, newData]);
     setId(null);
-  };
+  };//ren
   return (
     <>
       <AddTodo
